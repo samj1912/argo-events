@@ -100,10 +100,10 @@ func (el *EventListener) consumerGroupConsumer(ctx context.Context, log *zap.Sug
 	case "roundrobin":
 		config.Consumer.Group.Rebalance.GroupStrategies = []BalanceStrategy{sarama.BalanceStrategyRoundRobin}
 	case "range":
-										    config.Consumer.Group.Rebalance.GroupStrategies = []BalanceStrategy{sarama.BalanceStrategyRange}
+		config.Consumer.Group.Rebalance.GroupStrategies = []BalanceStrategy{sarama.BalanceStrategyRange}
 	default:
 		log.Info("Invalid rebalance strategy, using default: range")
-										    config.Consumer.Group.Rebalance.GroupStrategies = []BalanceStrategy{sarama.BalanceStrategyRange}
+		config.Consumer.Group.Rebalance.GroupStrategies = []BalanceStrategy{sarama.BalanceStrategyRange}
 	}
 
 	consumer := Consumer{
